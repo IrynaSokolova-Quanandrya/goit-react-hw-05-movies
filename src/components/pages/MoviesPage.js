@@ -1,3 +1,5 @@
 /** @format */
 
-export default function MoviesPage() {}
+export default function MoviesPage() {
+  return <p>MoviesPage</p>;
+}
