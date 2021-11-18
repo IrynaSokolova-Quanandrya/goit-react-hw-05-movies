@@ -15,13 +15,13 @@ const Navigation = () => (
       activeClassName={s.activeLink}>
       Movies
     </NavLink>
-    <NavLink
+    {/* <NavLink
       exact
       to='/movies/:movieId'
       className={s.link}
       activeClassName={s.activeLink}>
       Movie Details
-    </NavLink>
+    </NavLink> */}
     {/* <NavLink
       exact
       to='/movies/:movieId/cast'
