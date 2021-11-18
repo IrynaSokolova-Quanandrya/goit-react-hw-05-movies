@@ -1,5 +1,7 @@
 /** @format */
 
+/** @format */
+
 import Navigation from "../Navigation/Navigation";
 import s from "./AppBar.module.css";
 
