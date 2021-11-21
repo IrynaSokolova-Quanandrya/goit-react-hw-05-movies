@@ -6,7 +6,7 @@ import "./App.module.css";
 import AppBar from "./components/AppBar/AppBar";
 import HomePage from "./components/pages/HomePage";
 import MovieDetailsPage from "./components/pages/MovieDetailsPage";
-import MoviesPage from "./components/pages/MoviesPage";
+import MoviesPage from "./components/pages/MoviePage/MoviesPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 
 export default function App() {
@@ -16,9 +16,9 @@ export default function App() {
 
       <Routes>
         <Route path='/' exact element={<HomePage />} />
-        <Route path='/movies' element={<MoviesPage />} />
+        <Route path='/movies' exact element={<MoviesPage />} />
         <Route path='/movies/:movieId' element={<MovieDetailsPage />} />
-        <Route path='' element={<NotFoundPage />} />
+        <Route element={<NotFoundPage />} />
       </Routes>
     </>
   );
