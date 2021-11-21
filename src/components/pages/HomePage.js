@@ -2,14 +2,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import Container from "../Container/Container";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   const KEY = "098c0a06f6f788991ea9bd1b1a28f1b9";
   const URL = "https://api.themoviedb.org/3/";
-  // console.log(movies);
 
   useEffect(() => {
     axios

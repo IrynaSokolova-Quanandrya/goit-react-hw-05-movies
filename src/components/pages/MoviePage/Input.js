@@ -4,9 +4,7 @@ import { toast } from "react-toastify";
 
 export default function Input({ onSubmit }) {
   const [query, setQuery] = useState("");
-  //   console.log(query);
   const handleChange = (e) => {
-    // console.log(e.target.value);
     setQuery(e.target.value.toLowerCase());
   };
   const handleSubmit = (e) => {

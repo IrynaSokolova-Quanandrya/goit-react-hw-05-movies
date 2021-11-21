@@ -10,11 +10,10 @@ export default function MoviesPage() {
   const URL = "https://api.themoviedb.org/3/";
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState("");
-  // console.log(query);
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=098c0a06f6f788991ea9bd1b1a28f1b9&language=en-US&page=1&include_adult=false`
+        `${URL}search/movie?query=${query}&api_key=${KEY}&language=en-US&page=1&include_adult=false`
       )
       .then((r) => r.data)
       .then((data) => setMovies(data.results));
@@ -24,19 +23,6 @@ export default function MoviesPage() {
     setQuery(query);
     setMovies([]);
   };
-  // const handleChange = (e) => {
-  //   console.log(e.target.value);
-  //   setQuery(e.target.value.toLowerCase());
-  // };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // if (query.trim() === "") {
-  //   return toast.error("Enter search query!");
-  // }
-  // handleChange();
-  // console.log(e);
-  // setQuery("");
-  // };
   return (
     <>
       <Input onSubmit={searchQuery} />
