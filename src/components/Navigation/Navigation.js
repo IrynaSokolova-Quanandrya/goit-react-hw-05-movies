@@ -5,14 +5,12 @@ import s from "../Navigation/Navigation.module.css";
 
 const Navigation = () => (
   <nav>
-    <NavLink exact to='/' className={s.link} activeClassName={s.activeLink}>
+    <NavLink to='/' className={s.link} activeClassName={s.activeLink}>
       Home
     </NavLink>
     <NavLink
-      exact
       to='/movies'
-      className={s.link}
-      activeClassName={s.activeLink}>
+      className={({ isActive }) => isActive ? "red" : "blue"}>
       Movies
     </NavLink>
     {/* <NavLink
@@ -21,8 +19,8 @@ const Navigation = () => (
       className={s.link}
       activeClassName={s.activeLink}>
       Movie Details
-    </NavLink> */}
-    {/* <NavLink
+    </NavLink>
+    <NavLink
       exact
       to='/movies/:movieId/cast'
       className={s.link}
