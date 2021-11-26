@@ -1,6 +1,7 @@
 /** @format */
 import { toast } from "react-toastify";
 import axios from "axios";
+// import {BrowserHistory} from 'react-router'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -40,6 +41,7 @@ export default function MoviesPage() {
  
   return (
     <>
+    {/* <button onClick={BrowserHistory.goBack}>Go Back</button> */}
      <form className='form' onSubmit={handleSubmit}>
       <label className='label'>
         <input
