@@ -5,35 +5,14 @@ import s from "../Navigation/Navigation.module.css";
 
 const Navigation = () => (
   <nav>
-    <NavLink to='/' className={s.link} activeClassName={s.activeLink}>
+    <NavLink to='/' className={({ isActive }) => isActive ? "activ" : "link"}>
       Home
     </NavLink>
     <NavLink
       to='/movies'
-      className={({ isActive }) => isActive ? "red" : "blue"}>
+      className={({ isActive }) => isActive ? "activ" : "link"}>
       Movies
     </NavLink>
-    {/* <NavLink
-      exact
-      to='/movies/:movieId'
-      className={s.link}
-      activeClassName={s.activeLink}>
-      Movie Details
-    </NavLink>
-    <NavLink
-      exact
-      to='/movies/:movieId/cast'
-      className={s.link}
-      activeClassName={s.activeLink}>
-      Cast
-    </NavLink>
-    <NavLink
-      exact
-      to='/movies/:movieId/reviews'
-      className={s.link}
-      activeClassName={s.activeLink}>
-      Reviews
-    </NavLink> */}
   </nav>
 );
 export default Navigation;
