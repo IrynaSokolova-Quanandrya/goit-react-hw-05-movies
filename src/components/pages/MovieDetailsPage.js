@@ -42,13 +42,14 @@ export default function MovieDetailsPage() {
         <h2>Overview</h2>
         <p>{`${movie.overview}`}</p>
         <h3>Genres</h3>
-        <ul>
-           {/* {movie && movie.genres.map(genre=>{ 
-            <li>{`${genre.name}`}</li>
-          })} */}
-        </ul>
+        {/* <ul className={s.list}>
+           {movie && movie.genres.map(genre=>
+           <li>{`${genre.name}`}</li>
+          )}
+        </ul> */}
         </div>
         </div>
+        <div className={s.link__list}>
         <p>Additional Information</p>
       <ul>
         <li>
@@ -58,6 +59,7 @@ export default function MovieDetailsPage() {
       <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
         </li>
       </ul>
+        </div>
       <Routes>
       <Route path='cast' element={<Cast />}/>
       <Route path={`/movies/${movieId}/reviews`} element={<Reviews />} />
