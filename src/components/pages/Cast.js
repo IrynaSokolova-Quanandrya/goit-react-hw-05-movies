@@ -1,7 +1,7 @@
 import axios from "axios";
-// import {BrowserHistory} from 'react-router'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import s from '../Styles/Cast.module.css';
 
 
 
@@ -17,9 +17,16 @@ console.log(movie);
         .get(`${URL}movie/${movieId}/credits?api_key=${KEY}&language=en-US`)
         .then(r=>setMovie(r.data))
     })
-    return <>
-    {/* <button onClick={BrowserHistory.goBack}>Go Back</button> */}
-    Hello</>
-    
+    return( 
+    <>
+    <ul className={s.cast__list}>
+        <li>
+            {/* <img src={} alt={}/>
+            <p>{}</p>
+            <p>Character:{}</p> */}
+            </li>
+    </ul>
+    </>
+    )  
 }
 export default Cast;
