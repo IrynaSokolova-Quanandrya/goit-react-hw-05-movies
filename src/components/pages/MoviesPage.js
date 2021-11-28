@@ -1,7 +1,6 @@
 /** @format */
 import { toast } from "react-toastify";
 import axios from "axios";
-// import {BrowserHistory} from 'react-router'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,6 +10,7 @@ export default function MoviesPage() {
   const URL = "https://api.themoviedb.org/3/";
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState("");
+  
   useEffect(() => {
     axios
       .get(
