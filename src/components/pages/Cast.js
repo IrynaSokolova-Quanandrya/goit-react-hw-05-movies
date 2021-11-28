@@ -20,6 +20,7 @@ console.log(credits);
     },[movieId])
     return( 
     <>
+    <button onClick={() => navigate(-1)}>Go Back</button>
     {credits &&
     <ul className={s.cast__list}>
         {credits.map(credit=>
@@ -34,7 +35,7 @@ console.log(credits);
     
     </ul>}
     
-    <button onClick={() => navigate(-1)}>Go Back</button>
+    
 
     </>
     )  
