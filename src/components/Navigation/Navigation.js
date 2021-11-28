@@ -2,7 +2,6 @@
 
 import { NavLink } from "react-router-dom";
 import s from '../Navigation/Navigation.module.css';
-console.log(s);
 
 const Navigation = () => (
   <nav className={s.nav}>
