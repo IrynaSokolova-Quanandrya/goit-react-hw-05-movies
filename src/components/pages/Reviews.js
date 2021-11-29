@@ -1,18 +1,13 @@
-import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
+import FetchReviews from "../../services/FetchApi";
 
 export default function Reviews(){
     const [reviews, setReviews] = useState([]);
     const { movieId } = useParams();
     const navigate = useNavigate();
-    const KEY = "098c0a06f6f788991ea9bd1b1a28f1b9";
-    const URL = "https://api.themoviedb.org/3/";
-   console.log(reviews);
     useEffect(()=>{
-        axios
-        .get(`${URL}movie/${movieId}/reviews?api_key=${KEY}&language=en-US`)
-        .then(r=>r.data)
+        FetchReviews.FetchReviewsApi(movieId)
         .then(reviews=>setReviews(reviews.results))
     },[movieId])
 
@@ -21,7 +16,7 @@ export default function Reviews(){
 {reviews ? 
 <ul>
     {reviews.map(review=>
-        <li>
+        <li key={review.id}>
         <h3>Author:{review.author}</h3>
     <p>{review.content}</p>
         </li>)}
