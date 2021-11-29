@@ -15,7 +15,7 @@
 	padding-left: 0;
 	margin: 0;
 }
-.list:not(:last-child) {
+li:not(:last-child) {
 	margin-right: 8px;
 }
 .link__list {

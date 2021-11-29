@@ -10,10 +10,10 @@ export default function Reviews(){
         FetchReviews.FetchReviewsApi(movieId)
         .then(reviews=>setReviews(reviews.results))
     },[movieId])
-
+console.log(reviews);
     return <>
-          <button onClick={() => navigate(-1)}>Go Back</button>
-{reviews ? 
+          <button onClick={() => navigate(-1)}>Go back</button>
+{reviews.length >=1 ? 
 <ul>
     {reviews.map(review=>
         <li key={review.id}>

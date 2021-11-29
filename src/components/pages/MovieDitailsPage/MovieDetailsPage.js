@@ -1,20 +1,14 @@
-/** @format */
-import axios from "axios";
-// import { lazy, Suspense } from "react";
-// import { Route, Routes } from "react-router-dom";
-
 import { NavLink, useNavigate, useParams, Outlet } from "react-router-dom";
+import React from "react";
 import { useState, useEffect } from "react";
 import s from './MovieDetailsPage.module.css';
 import FetchMovie  from "../../../services/FetchApi";
-// const Cast = lazy(()=>import('./Cast'));
-// const Reviews = lazy(()=>import('./Reviews'))
 
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
   const navigate = useNavigate();
-  
+  console.log(movie);
   useEffect(() => {
     FetchMovie.FetchMovieDetailsPageApi(movieId)
       .then(setMovie)
@@ -37,11 +31,13 @@ export default function MovieDetailsPage() {
         <h2>Overview</h2>
         <p>{`${movie.overview}`}</p>
         <h3>Genres</h3>
+           
            <ul className={s.list}>
-             {/* {movie.genres.map(genre =>
+             {movie.genres.map(genre =>
             <li>{`${genre.name}`}</li>
-          )}  */}
+          )} 
          </ul>
+         
       </div>
     </div>}
       <div className={s.link__list}>
@@ -54,13 +50,6 @@ export default function MovieDetailsPage() {
             <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
           </li>
         </ul>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-        <Route path='/movies/:movieId/cast' element={<Cast />} />
-        <Route path='/movies/:movieId/reviews' element={<Reviews />} />
-        </Routes>
-      </Suspense> */}
-
         <Outlet />
 
       </div>
