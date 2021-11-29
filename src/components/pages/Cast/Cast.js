@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import s from '../Styles/Cast.module.css';
-import FetchCredits from "../../services/FetchApi";
+import s from './Cast.module.css';
+import FetchCredits from "../../../services/FetchApi";
 
 
 

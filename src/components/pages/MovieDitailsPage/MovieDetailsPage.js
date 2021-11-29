@@ -5,7 +5,8 @@ import axios from "axios";
 
 import { NavLink, useNavigate, useParams, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
-import s from '../Styles/MovieDetailsPage.module.css'
+import s from './MovieDetailsPage.module.css';
+import FetchMovie  from "../../../services/FetchApi";
 // const Cast = lazy(()=>import('./Cast'));
 // const Reviews = lazy(()=>import('./Reviews'))
 
@@ -13,15 +14,9 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
   const navigate = useNavigate();
-  ;
-  const KEY = "098c0a06f6f788991ea9bd1b1a28f1b9";
-  const URL = "https://api.themoviedb.org/3/";
-
-
+  
   useEffect(() => {
-    axios
-      .get(`${URL}/movie/${movieId}?api_key=${KEY}&language=en-US`)
-      .then((r) => (r.data))
+    FetchMovie.FetchMovieDetailsPageApi(movieId)
       .then(setMovie)
   }, [movieId]);
 

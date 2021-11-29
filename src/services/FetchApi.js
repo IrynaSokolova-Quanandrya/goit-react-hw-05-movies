@@ -8,6 +8,11 @@ import axios from "axios";
     .then((r) => r.data)
    
 }
+function FetchMovieDetailsPageApi(movieId){
+    return axios
+    .get(`${URL}/movie/${movieId}?api_key=${KEY}&language=en-US`)
+    .then((r) => (r.data))   
+}
 function FetchCastApi(movieId) {
      return  axios
      .get(`${URL}movie/${movieId}/credits?api_key=${KEY}&language=en-US`)
@@ -22,6 +27,8 @@ function FetchReviewsApi(movieId) {
 const api = {
     FetchHomeApi,
     FetchCastApi,
-    FetchReviewsApi
-};
+    FetchReviewsApi,
+    FetchMovieDetailsPageApi
+}
+
 export default api

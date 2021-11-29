@@ -7,7 +7,7 @@ import AppBar from "./components/AppBar/AppBar";
 import HomePage from "./components/pages/HomePage";
 
 const MoviesPage = lazy(()=> import('./components/pages/MoviesPage'));
-const MovieDetailsPage = lazy(()=> import('./components/pages/MovieDetailsPage'))
+const MovieDetailsPage = lazy(()=> import('./components/pages/MovieDitailsPage'))
 const Cast = lazy(()=>import('./components/pages/Cast'));
 const Reviews = lazy(()=>import('./components/pages/Reviews'))
 

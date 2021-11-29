@@ -1,6 +1,6 @@
 import {useNavigate, useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
-import FetchReviews from "../../services/FetchApi";
+import FetchReviews from "../../../services/FetchApi";
 
 export default function Reviews(){
     const [reviews, setReviews] = useState([]);

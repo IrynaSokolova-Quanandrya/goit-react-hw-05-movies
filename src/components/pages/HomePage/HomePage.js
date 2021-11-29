@@ -1,7 +1,7 @@
 /** @format */
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import FetchMovies from "../../services/FetchApi";
+import FetchMovies from "../../../services/FetchApi";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
