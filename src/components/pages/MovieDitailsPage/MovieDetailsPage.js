@@ -33,7 +33,7 @@ export default function MovieDetailsPage() {
         <h3>Genres</h3>
            
            <ul className={s.list}>
-             {movie.genres.map(genre =>
+             {movie.length >= 1 && movie.genres.map(genre =>
             <li>{`${genre.name}`}</li>
           )} 
          </ul>
