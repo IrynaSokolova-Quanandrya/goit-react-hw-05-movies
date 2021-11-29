@@ -1,8 +1,13 @@
 /** @format */
 import axios from "axios";
+// import { lazy, Suspense } from "react";
+// import { Route, Routes } from "react-router-dom";
+
 import { NavLink, useNavigate, useParams, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import s from '../Styles/MovieDetailsPage.module.css'
+// const Cast = lazy(()=>import('./Cast'));
+// const Reviews = lazy(()=>import('./Reviews'))
 
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState([]);
@@ -54,7 +59,15 @@ export default function MovieDetailsPage() {
             <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
           </li>
         </ul>
+        {/* <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+        <Route path='/movies/:movieId/cast' element={<Cast />} />
+        <Route path='/movies/:movieId/reviews' element={<Reviews />} />
+        </Routes>
+      </Suspense> */}
+
         <Outlet />
+
       </div>
     </>
   );
