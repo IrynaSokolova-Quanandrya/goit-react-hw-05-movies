@@ -12,12 +12,14 @@ export default function MoviesPage() {
   const [query, setQuery] = useState("");
   
   useEffect(() => {
-    axios
+    if(query){
+      axios
       .get(
         `${URL}search/movie?query=${query}&api_key=${KEY}&language=en-US&page=1&include_adult=false`
       )
       .then((r) => r.data)
       .then((data) => setMovies(data.results));
+    }
   }, [query]);
 
 
@@ -37,18 +39,18 @@ export default function MoviesPage() {
 
     setQuery("");
   };
-
  
   return (
     <>
-    {/* <button onClick={BrowserHistory.goBack}>Go Back</button> */}
-     <form className='form' onSubmit={handleSubmit}>
+     <form className='form' onSubmit={console.log(handleSubmit)}>
       <label className='label'>
         <input
           className='input'
           value={query}
-          name={query}
-          type='search'
+          name='query'
+          type='text'
+          autoComplete='off'
+          placeholder='Search movie'
           onChange={handleChange}></input>
         <button type='submit' className='button'>
           Search
